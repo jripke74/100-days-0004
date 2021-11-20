@@ -1,0 +1,22 @@
+{
+  "name": "0004",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jripke74/100-days-0004.git"
+  },
+  "author": "Jeff Ripke",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jripke74/100-days-0004/issues"
+  },
+  "homepage": "https://github.com/jripke74/100-days-0004#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
