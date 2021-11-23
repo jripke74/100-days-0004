@@ -12,7 +12,7 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 
 app.get("/", function (req, res) {
-  res.render('index');
+  res.render("index");
 });
 
 app.get("/restaurants", function (req, res) {
@@ -21,11 +21,14 @@ app.get("/restaurants", function (req, res) {
   const fileData = fs.readFileSync(filePath);
   const storedRestaurants = JSON.parse(fileData);
 
-  res.render('restaurants', { numberOfRestaurants: storedRestaurants.length });
+  res.render("restaurants", {
+    numberOfRestaurants: storedRestaurants.length,
+    restaurants: storedRestaurants,
+  });
 });
 
 app.get("/recommend", function (req, res) {
-  res.render('recommend');
+  res.render("recommend");
 });
 
 app.post("/recommend", function (req, res) {
@@ -43,11 +46,11 @@ app.post("/recommend", function (req, res) {
 });
 
 app.get("/confirm", function (req, res) {
-  res.render('confirm');
+  res.render("confirm");
 });
 
 app.get("/about", function (req, res) {
-  res.render('about');
+  res.render("about");
 });
 
 app.listen(3000);
