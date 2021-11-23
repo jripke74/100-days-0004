@@ -1,1 +1,16 @@
-[{"name":"Kidd Valley","address":"1102 S Lake WA BLVD","cuisine":"burger joint","website":"https://kiddvaley.com","description":"not know"},{"name":"test","address":"ok here we are","cuisine":"American","website":"http://thisis.com","description":"Good!!!"}]
+[
+  {
+    "name": "Kidd Valley",
+    "address": "1102 S Lake WA BLVD",
+    "cuisine": "burger joint",
+    "website": "https://kiddvaley.com",
+    "description": "not know"
+  },
+  {
+    "name": "test",
+    "address": "ok here we are",
+    "cuisine": "American",
+    "website": "http://thisis.com",
+    "description": "Good!!!"
+  }
+]
