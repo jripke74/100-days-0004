@@ -27,7 +27,11 @@ app.get("/restaurants", function (req, res) {
   });
 });
 
+<<<<<<< HEAD
 app.get('/restaurants/:id', function(req, res) {
+=======
+app.get('/restaurants/:id', function (req, res) {
+>>>>>>> 4ae3fa7cd38ccd831b346362d3fa38489d61e571
   const restaurantId = req.params.id;
   res.render('restaurant-detail', { rid: restaurantId });
 });
