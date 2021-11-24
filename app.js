@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const express = require("express");
-const uuid = require('uuid');
+const uuid = require("uuid");
 
 const app = express();
 
@@ -28,7 +28,7 @@ app.get("/restaurants", function (req, res) {
   });
 });
 
-app.get('/restaurants/:id', function (req, res) {
+app.get("/restaurants/:id", function (req, res) {
   const restaurantId = req.params.id;
   const filePath = path.join(__dirname, "data", "restaurants.json");
 
@@ -37,11 +37,11 @@ app.get('/restaurants/:id', function (req, res) {
 
   for (const restaurant of storedRestaurants) {
     if (restaurant.id === restaurantId) {
-      return res.render('restaurant-detail', { restaurant });
+      return res.render("restaurant-detail", { restaurant });
     }
   }
 
-  res.render('404');
+  res.render("404");
 });
 
 app.get("/recommend", function (req, res) {
@@ -69,6 +69,10 @@ app.get("/confirm", function (req, res) {
 
 app.get("/about", function (req, res) {
   res.render("about");
+});
+
+app.use(function (req, res) {
+  res.render("404");
 });
 
 app.listen(3000);
