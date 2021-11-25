@@ -51,14 +51,11 @@ app.get("/recommend", function (req, res) {
 app.post("/recommend", function (req, res) {
   const restaurant = req.body;
   restaurant.id = uuid.v4();
-  const filePath = path.join(__dirname, "data", "restaurants.json");
+  const restaurants = getStoredRestaurants();
 
-  const fileData = fs.readFileSync(filePath);
-  const storedRestaurants = JSON.parse(fileData);
+  restaurants.push(restaurant);
 
-  storedRestaurants.push(restaurant);
-
-  fs.writeFileSync(filePath, JSON.stringify(storedRestaurants));
+  storeRestaurants(restaurants);
 
   res.redirect("/confirm");
 });
@@ -75,8 +72,8 @@ app.use(function (req, res) {
   res.status(404).render("404");
 });
 
-app.use(function(error, req, res, next) {
-  res.status(500).render('500');
+app.use(function (error, req, res, next) {
+  res.status(500).render("500");
 });
 
 app.listen(3000);
